@@ -8,7 +8,7 @@ var cors = require('cors');
 app.use(cors());
 app.options('*', cors());
 
-var libro_route = require('./routes/libroRoute');
+
 var marca_route = require('./routes/marcaRoute');
 var auto_route = require('./routes/autoRoute');
 
@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/api',libro_route);
+
 app.use('/api',marca_route);
 app.use('/api',auto_route);
 

@@ -9,5 +9,6 @@ var api = express.Router();
 
 api.post('/marca', marcaController.guardar);
 api.get('/marca', marcaController.todos);
+api.delete('/eliminar/:id',marcaController.eliminar);
 
 module.exports = api;

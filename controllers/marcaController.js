@@ -27,8 +27,20 @@ function todos(req, res) {
     })
 }
 
+function eliminar(req, res){
+
+    let idMarca = req.params.id
+
+    Marca.findByIdAndDelete(idMarca, (err)=>{
+        if (err) return res.status(500).send({ message: 'error al realizar la peticion' })
+
+        res.status(200).send({ message: 'Eliminado correctamente'})
+    })
+}
+
 
 module.exports = {
     guardar,
     todos,
+    eliminar
 };
