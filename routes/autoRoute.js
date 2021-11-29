@@ -12,6 +12,7 @@ var api = express.Router();
 //  Guardar Autos
 api.post('/auto', autoController.guardar);
 api.get('/auto', autoController.listar);
-api.get('/autosimple', autoController.listarSimple)
+api.get('/autosimple', autoController.listarSimple);
+api.delete('/eliminarauto/:id',autoController.eliminar);
 // Exportamos la configuración
 module.exports = api;

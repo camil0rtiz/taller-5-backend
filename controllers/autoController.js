@@ -33,8 +33,21 @@ function listar(req, res) {
         })
 }
 
+
+function eliminar(req, res){
+
+    let idAuto = req.params.id
+
+    Auto.findByIdAndDelete(idAuto, (err)=>{
+        if (err) return res.status(500).send({ message: 'error al realizar la peticion' })
+
+        res.status(200).send({ message: 'Eliminado correctamente'})
+    })
+}
+
 module.exports = {
     guardar,
     listarSimple,
-    listar
+    listar,
+    eliminar
 };
